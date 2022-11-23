@@ -1,4 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+/* font-family: 'Fraunces', serif;
+font-family: 'Montserrat', sans-serif; */
+
+:root {
+    /* primary */
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-primary-700: hsl(159, 37%, 22%);
+    --clr-secondary-300: hsl(30, 38%, 92%);
+
+    /* Neutral */
+    --clr-neutral-800: hsl(212, 21%, 14%);
+    --clr-neutral-500: hsl(228, 12%, 48%);
+    --clr-netural-100: hsl(0, 0%, 100%);
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --fs-400: .875rem;
+    --fs-800: 2rem;
+}
+
+/* CSS Reset by joshwcomeau https: //www.joshwcomeau.com/css/custom-css-reset/ */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--ff-base);
+    font-size: var(--fs-400);
+    background-color: var(--clr-secondary-300);
+    padding: 2rem 1rem;
+    display: grid;
+    place-content: center;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.card {
+    background-color: var(--clr-netural-100);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: grid;
+    max-width: 600px;
+}
+
+@media (min-width:600px) {
+    .card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.right-col {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.lead-title {
+    color: var(--clr-neutral-500);
+    font-weight: var(--fw-regular);
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: var(--fs-400);
+}
+
+.product-title {
+    font-family: var(--ff-accent);
+    font-size: var(--fs-800);
+}
+
+.product-description {
+    color: var(--clr-neutral-500);
+    line-height: 1.5;
+}
+
+.price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.product-price-current {
+    font-size: var(--fs-800);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-400);
+    font-family: var(--ff-accent);
+}
+
+.product-price-original {
+    color: var(--clr-neutral-500);
+    text-decoration: line-through;
+}
+
+.btn {
+    background-color: var(--clr-primary-400);
+    border: none;
+    display: inline-flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    color: var(--clr-netural-100);
+    font-weight: var(--fw-bold);
+}
+
+.btn[data-icon="shopping-cart"]::before {
+    content: '';
+    width: 15px;
+    height: 16px;
+    background-image: url('images/icon-cart.svg');
+}
+
+.btn:is(:hover, :focus) {
+    background-color: var(--clr-primary-700);
+}
+
 .attribution {
+    margin-top: 1rem;
     font-size: 11px;
     text-align: center;
 }
